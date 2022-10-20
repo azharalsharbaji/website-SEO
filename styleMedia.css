@@ -1,0 +1,129 @@
+                /* ! Media Queries */
+
+@media only screen and (min-width: 320px)
+                   and (max-width: 767px)
+{
+
+    header { display: none;}
+
+                /*! --------*/
+    main.main-container
+    {
+        width: 100%;
+        padding: 15%;
+    }
+    main.main-container h1     
+        {  font-size: 40px;  }
+    #title_part2
+        { font-size: 30px; }
+    main.main-container h1 p
+    { font-size: 15px; }
+    main.main-container img
+    { display: none;}
+
+    div.service-container
+    {
+        display: block;
+        margin: 5%;
+    }
+    .service-container div.box
+        {    max-width: 100%;}
+
+                /*! --------*/
+    h1.secondry-head
+    { 
+        font-size: 30px; 
+        margin: 5% 3%;
+    }
+    h1.secondry-head + span::after
+    {
+        content: '';
+        position: relative;
+            left: -100px;
+    }
+    div.secondry-container div.secondry-box
+    {    display: block;}
+    div.secondry-box p
+    { 
+        width: 100%; 
+        font-size: 16px;
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+    div.secondry-box img
+    {
+        max-width: 90%;
+        margin: 10%;
+    }
+    div.secondry-container button.btn-secondry
+    {
+        background-color: #ca2323;
+        color: #ffffff;
+        border: 2px solid #ca2323;
+    }
+
+
+
+            /*! --------*/
+    section.case-container
+    { width: 100%; margin: 10% auto; padding: 10%;}
+    div.case-boxes
+        {    display: block; }
+    div.child-box
+    {  
+        margin-top: 5%;
+        
+    }
+    h1.case-title ,.pricing-title
+    {        
+        text-align: center;
+        /* margin: 10% 7% 1% 7%; */
+    }
+
+            /*! --------*/
+    section.pricing-container
+    {
+        max-width: 100%;
+        display: block;
+        margin-top: 10%;
+    }
+    .parent
+    {    margin-bottom: 30%;}
+
+            /*! --------*/
+    h1.title
+    {    font-size: 35px;}
+    p.teamwork-title2
+    {
+        font-size: 16px;
+        margin: 8%;
+    }
+
+            /*! Client */
+    section.client-container
+    {
+        width: 100%;
+    }
+    section.testimonial-container
+    {
+        display: block;
+        margin-top: 5%;
+    }
+    div.cloud-y ,.cloud-b ,.cloud-r
+    { margin-top: 10%; }
+
+            /*! --------*/
+    section.content-container
+    {
+        display: block;
+        margin: 1%;
+    }
+    .form-box textarea
+    {
+        width: inherit;
+    }
+    
+
+
+    
+}
