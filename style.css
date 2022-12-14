@@ -5,16 +5,20 @@
 }
 html
 { scroll-behavior: smooth; }
+body
+{
+    overflow: auto;
+}
 header
 {
     width: 100%;
     background-color: #ff472698;
-    position: fixed;
+    position: sticky;
         top: 0;
         left: 0;
     z-index: 1;
 }
-::-webkit-scrollbar
+/* ::-webkit-scrollbar
 {    width: 8px; }
 ::-webkit-scrollbar-thumb
 {
@@ -26,7 +30,7 @@ header
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
-}
+} */
 nav.navbar
 {
     display: flex;
@@ -75,10 +79,10 @@ header nav ul a:hover /* ,.active */
     background-color: #fff;
     color: red;
 }
-nav ul a button.btn-primary
+nav.navbar ul button.btn-primary
 {
     padding: 10px 15px;
-    /* background-color: #fff5f5; */
+    background-color: #fff5f5;
     font-size: 15px;
     color: #F31616;
     font-weight: 400;
@@ -96,10 +100,10 @@ nav ul a button.btn-primary
     -ms-transition: all .5s;
     -o-transition: all .5s;
 }
-nav ul a button.btn-primary:hover
+nav.navbar ul button.btn-primary:hover
 {
-    background-color: transparent;
-    color: red;
+    background: none;
+    color: rgb(255, 255, 255);
     border: 2px solid #fff5f5;
 }
 main.main-container
@@ -180,7 +184,7 @@ main.main-container h1 p
 }
 main.main-container img.main-img
 {
-    max-width: 40%;
+    width: 40%;
     margin-top: 7%;
     padding: 30px;
     animation: moveimg 2s ease-out;
@@ -204,22 +208,24 @@ main.main-container img.main-img
 }
 
             /* ! Icon Arrow  */
+.relative
+{
+    position: relative;
+}
 div.icon-arrow
 {
     background-color: #F31616;
     box-shadow: inset 0 0 8px #d40000;
-    border-radius: 20px;
+
     color: #fff;
     display: inline;
-    padding: 15px;
-    margin: 3%;
+    padding: 8px;
+    /* margin: 3%; */
     cursor: pointer;
     position: fixed;
-    bottom: -30px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+        bottom: 30px;
+        left: 50px;
+    z-index: 1;
     transition: all .5s;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
@@ -236,7 +242,7 @@ div.icon-arrow:hover
     -o-transform: translateY(-30%);
 }
 div.icon-arrow  a i
-{  color: #fff;  } 
+{  color: #fff;  font-size: 16px;} 
 
             /* ! Wrapper Section */
 .wrapper
@@ -317,7 +323,7 @@ div.service-container
 h1.about-head
 {
     text-align: left;
-    margin: 0 0 1% 15%;
+    margin: 0 0 1% 10%;
     white-space: pre-line;
     font-size: 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -349,29 +355,35 @@ h1.about-head + span::before
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
 }
-div.about-container div.about-box
+div.about-container 
 {
+    /* border: 1px solid forestgreen; */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;  
+}
+div.about-box
+{
+    width: 40%;  
 }
 div.about-box p
 {
-    width: 40%;
+    /* border: 1px solid #ca2323; */
     color: #927680;
     font-size: 18px;
     line-height: 1.5;
 }
-div.about-box img
-{   max-width: 30%;  }
-
+div.about-container img
+{   width: 30%;  
+    /* border: 1px solid #ca2323; */
+}
 div.about-container button.btn-about
 {
     background-color: transparent;
     color: #ca2323;
     border: 2px solid #ca2323;
     padding: 10px 25px;
-    margin: -5% 15% 5%;
+    margin: 20px 0;
     cursor: pointer;
     border-radius: 5px;
     transition: all .5s;
@@ -435,12 +447,12 @@ h1.title + span::before
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    padding: 0 2%;
+    /* padding: 0 2%; */
 }
-.child-box
+.child-box 
 {   
-    width: 340px;
-    height: 250px;
+    width: 30%;
+    height: 100%;
     background-color: #f3f3f3;
     margin: 1%;
     overflow: hidden;
@@ -452,7 +464,6 @@ h1.title + span::before
 {
     position: absolute;
         top: 50%;
-    /* left: 50%; */
     transform: translate(0% , -50%);
     width: 100%;
     height: 100%;
@@ -540,28 +551,29 @@ h1.title + span::before
 section.pricing-container
 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    /* overflow: hidden; */
-    margin: 1%;
-    padding: 0 10%;
-    padding-top: 2%;
+    position: relative;
+    overflow: hidden;
+    margin: 5%;
+    padding: 1%;
 }
 .parent
 {
+
     width: 330px;
-    height: 600px;
+    height: 630px;
     background-color: transparent;
     position: relative;
-        top: 0;
     margin-bottom: 5%;
+    overflow: hidden;
 }
 .squar1,
 .squar2,
 .squar3
 {
-    width: 330px;
+    width: 100%;
     height: 250px;
 }
 .squar1
@@ -576,9 +588,8 @@ section.pricing-container
         top: 0;
         left: 0;
     background-color: transparent;
-    width: 330px;
-    /* text-align: center; */
-    /* margin: 50% auto; */
+    width: 100%;
+    overflow: hidden;
 }
 .divback
 {
@@ -617,7 +628,6 @@ section.pricing-container
     -ms-transform: rotate(88deg) translate(-214px ,-26px);
     -o-transform: rotate(88deg) translate(-214px ,-26px);
 }
-
 div.card-content h1
 {
     padding: 30px 60px;
@@ -631,7 +641,7 @@ div.circle-price1 ,
     .circle-price2 ,
     .circle-price3
 {
-    margin-bottom: 25%;
+    margin-bottom: 10%;
     color: #292929;
     text-align: center;
     background-color: #fff;
@@ -639,16 +649,16 @@ div.circle-price1 ,
     width: 130px;
     height: 130px;
     cursor: pointer;
-    transform: translate( 71%, 51%);
+    transform: translate( 70%, 12%);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    -webkit-transform: translate( 71%, 51%);
-    -moz-transform: translate( 71%, 51%);
-    -ms-transform: translate( 71%, 51%);
-    -o-transform: translate( 71%, 51%);
+    -webkit-transform: translate( 70%, 12%);
+    -moz-transform: translate( 70%, 12%);
+    -ms-transform: translate( 70%, 12%);
+    -o-transform: translate( 70%, 12%);
 }
 div.circle-price1  p:first-child,
 div.circle-price2  p:first-child,
@@ -667,22 +677,23 @@ div.circle-price3 p:last-child
     font-size: 16px;
     /* margin-top: -30%; */
 }
-div.circle-price1:hover,
-div.circle-price2:hover,
-div.circle-price3:hover
+.parent:hover div.circle-price1,
+.parent:hover div.circle-price2,
+.parent:hover div.circle-price3
 {
     color: #eeeeee;
+    cursor: pointer;
     transition: all .5s ;
     -webkit-transition: all .5s ;
     -moz-transition: all .5s ;
     -ms-transition: all .5s ;
-    -o-transition: all .5s ;
+    -o-transition: all .5s ;    
 }
-div.circle-price1:hover
+.parent:hover div.circle-price1
 {  background-color: #fdcf00;   }
-div.circle-price2:hover
+.parent:hover div.circle-price2
 {  background-color: #05429c;}
-div.circle-price3:hover
+.parent:hover div.circle-price3
 {  background-color: #309c05;}
 
 div.card-content ul 
@@ -781,11 +792,11 @@ p.teamwork-title2
 section.teamwork
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin: 1%;
-    padding: 5%;
+    margin: 5%;
+    padding: 1%;
 }
 div.team-card
 {
@@ -801,18 +812,18 @@ div.team-card
     -moz-transition: all 1s ease-in-out;
     -ms-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
-
+    
     perspective: 1000px; /* Make- Rotate 3D */  
     cursor: pointer;
 }
 .team-card:hover
 {
-    /* Make Text Veiw Right on Hover */
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
+    /*MakeTextVeiwRightonHover*/
+    transform: rotateY(180deg) ;
+    -webkit-transform: rotateY(180deg) ;
+    -moz-transform: rotateY(3deg) ;
+    -ms-transform: rotateY(3deg) ;
+    -o-transform: rotateY(3deg) ;
 }
 .team-card > div  /* App on The Child Only */
 {
@@ -839,10 +850,12 @@ div.team-card
     z-index: 2; 
     backface-visibility: hidden;  /* Hidden Front Part in Hover */
     -webkit-backface-visibility: hidden;
-    text-align: center;
-}
-.team-card .front img.avatar-img
+    /* text-align: center; */
+} 
+.front img
 {
+    position: relative;
+        top: 0;
     width: 300px;
     height: 300px;
     border-radius: 10px;
@@ -875,8 +888,10 @@ div.team-card
 }
 .team-card .back
 {
-    z-index: 1;/*Make Back Partin At the back*/
-    backface-visibility: hidden;   /* Hidden back Part in Hover */
+    z-index: 1;
+    /*Make Back Part in At the back*/
+    backface-visibility: hidden;
+    /*Hidden back Part in Hover*/
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -902,12 +917,11 @@ section.client-container
 {
     background-color: #eeeeeeaf;
     padding: 80px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
 }
 div.img-box-wrapper
 {
     width: 80%;
-    /* border: 2px solid #000000; */
     margin: 0 auto;
 }
 div.client-box
@@ -918,17 +932,15 @@ div.client-box
     /* position: relative;
     left: 10%; */
     overflow: hidden;
-    padding: 10px;
+    /* padding: 10px; */
 }
 div.client-box img
 {
     display: inline-block;
     padding: 0 50px;
     max-width: 30%;
-    animation: move 5s ease-in-out infinite alternate,                      
-    move2 5s linear infinite alternate-reverse;
-    -webkit-animation: move 5s ease-in-out infinite alternate,                      
-    move2 5s linear infinite alternate-reverse;
+    animation: move 5s ease-in-out infinite alternate,                          move2 5s linear infinite alternate-reverse;
+    -webkit-animation: move 5s ease-in-out infinite alternate,                      ;
 }
 div.client-box img:first-child
 {    margin-left: 30%;}
@@ -960,10 +972,9 @@ section.testimonial-container
 }
 div.cloud-y ,.cloud-b ,.cloud-r
 {
-    width: 370px;
+    width: 25%;
     height: 300px;
     margin-top: 3%;
-    position: relative;
 }
 .circle
 {
@@ -985,19 +996,24 @@ div.cloud-y ,.cloud-b ,.cloud-r
 }
 .rect
 {
-    position: absolute;
-        top: 70px;
-        left: 48px;
-    width: 270px;
+    /*position: absolute;
+    top: 70px;
+    right: 0px;
+    */width: 270px;
     height: 150px;
     padding: 0px 50px;
-    margin: 0 auto;
     text-align: center;
+    margin: 0 auto;
     border-radius: 70px;
     -webkit-border-radius: 80px;
     -moz-border-radius: 70px;
     -ms-border-radius: 70px;
     -o-border-radius: 70px;
+    transform: translateX(-19%);
+    -webkit-transform: translateX(-19%);
+    -moz-transform: translateX(-19%);
+    -ms-transform: translateX(-19%);
+    -o-transform: translateX(-19%);
 }
 .rect p
 {
@@ -1047,21 +1063,25 @@ div.bottom-content p
         /* ! Content Section */
 section.content-container
 {
-    width: 100%;
-    padding: 0 300px;
+    margin-top: 15px;
+    /* border: 1px solid #ff4726; */
 }
-.form-box
-{
-    max-width: 100%;
-    margin: 4% 0 auto;
-    /* border: 1px solid #000000; */
+.form-box .form-group
+{    
+    margin: 5px auto;
+    width: 50%;
+    /* border: 1px solid #ffa600; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
-form *
+
+form *:not(.form-group)
 {
     border: 2px solid #1C3879;
     margin: 1%;
     padding: 10px 30px;
-    /* outline-color: #d81515; */
+    /* */
     outline: none;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -1072,24 +1092,22 @@ form *
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-input
+input,
+textarea
 {
-    width: 360px;
+    width: 99%;
     height: 60px;
 }
 input:not([type="button"]):focus
 {
-    box-shadow: 0 0 5px #fdabab9f,
-                0 0 25px #fdabab9f,
-                0 0 50px #fa90909f,
-                0 0 100px #fa90909f;
-    border: none;
+    outline-offset: #d81515;
+
 }
 ::placeholder
 {    color: #ca23239f; font-weight: 500;}
 input[type="button"]
 {
-    width: 99%;
+
     height: 60px;
     background-color: #1C3879;
     color: #fff;
@@ -1133,14 +1151,14 @@ div.form-box p i:hover
         /* ! Footer */
 footer
 {
-    /* background-color: #fafafa; */
+    background-color: #fafafa;
     margin-top: 5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px 70px 5px 0; 
+    padding: 10px 70px 0px 0; 
 }
 footer div.title-foot
 {
-    /* border: 1px ssolid #000; */
+    border: 1px ssolid #000;
     margin: 7% 0 0 10%;
     display: flex;
     justify-content: space-between;

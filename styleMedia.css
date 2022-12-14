@@ -1,26 +1,39 @@
                 /* ! Media Queries */
 
-@media only screen and (min-width: 320px)
-                   and (max-width: 767px)
+@media only screen and (max-width: 767px)
 {
 
-    header { display: none;}
-
+    header {
+        overflow: auto;
+        display: none;
+    }
+    div.icon-arrow
+    {
+        position: fixed;
+        bottom: 0;
+    }
                 /*! --------*/
     main.main-container
     {
         width: 100%;
-        padding: 15%;
+        display: block;
     }
     main.main-container h1     
-        {  font-size: 40px;  }
+    {  
+        font-size: 35px;  
+        margin-left: 20px;
+    }
     #title_part2
         { font-size: 30px; }
     main.main-container h1 p
-    { font-size: 15px; }
-    main.main-container img
-    { display: none;}
+    { font-size: 12px; }
+    main.main-container img.main-img
+    {
+        width: 90%;
+        padding: 0px;
+    }
 
+            /* ! Services Section */
     div.service-container
     {
         display: block;
@@ -29,101 +42,151 @@
     .service-container div.box
         {    max-width: 100%;}
 
-                /*! --------*/
-    h1.secondry-head
+            /*! ---- About Section----*/
+    h1.about-head
     { 
         font-size: 30px; 
         margin: 5% 3%;
     }
-    h1.secondry-head + span::after
+    h1.about-head + span::after
     {
         content: '';
         position: relative;
-            left: -100px;
+            left: -130px;
     }
-    div.secondry-container div.secondry-box
-    {    display: block;}
-    div.secondry-box p
+    div.about-container 
+    {    
+        display: block;
+        padding: 0;
+    }
+    div.about-box
+    {
+        width: 100%;
+    }
+    div.about-box p
     { 
-        width: 100%; 
         font-size: 16px;
         margin-left: 10%;
         margin-top: 5%;
     }
-    div.secondry-box img
+    div.about-container img
     {
-        max-width: 90%;
-        margin: 10%;
+        width: 90%;
+        margin-left: 10%;
     }
-    div.secondry-container button.btn-secondry
+    div.about-container button.btn-about
     {
         background-color: #ca2323;
         color: #ffffff;
-        border: 2px solid #ca2323;
+        margin-left: 10%;
     }
-
-
-
-            /*! --------*/
+            /*! ---Case Section-----*/
     section.case-container
-    { width: 100%; margin: 10% auto; padding: 10%;}
+    { 
+        padding: 0 50px;
+        margin: 0;
+    }
     div.case-boxes
         {    display: block; }
     div.child-box
     {  
         margin-top: 5%;
-        
-    }
-    h1.case-title ,.pricing-title
-    {        
-        text-align: center;
-        /* margin: 10% 7% 1% 7%; */
+        width: 100%;
     }
 
-            /*! --------*/
+    h1.case-title ,.pricing-title
+    {   text-align: center;}
+
+            /*! ---! This Is Pricing Part -----*/
     section.pricing-container
     {
-        max-width: 100%;
         display: block;
         margin-top: 10%;
+        padding: 0;
+    }
+    div.card-content h1
+    {
+        padding: 10px 30px;
+        text-align: center;
     }
     .parent
-    {    margin-bottom: 30%;}
-
-            /*! --------*/
+    {        
+        position: relative;    
+        margin-bottom: 20%;
+    }
+    div.circle-price1 ,
+    .circle-price2 ,
+    .circle-price3
+    {
+        margin-bottom: 30%;
+        transform: translate( 70%, 50%);
+        -webkit-transform: translate( 70%, 50%);
+        -moz-transform: translate( 70%, 50%);
+        -ms-transform: translate( 70%, 50%);
+        -o-transform: translate( 70%, 50%);
+    }
+            /*! --! TeamWork  Section ------*/
     h1.title
-    {    font-size: 35px;}
+    {    font-size: 24px;}
     p.teamwork-title2
     {
-        font-size: 16px;
+        font-size: 14px;
         margin: 8%;
     }
 
             /*! Client */
     section.client-container
     {
+        padding: 20px;
+        margin: 30px auto;  
+        
+    }
+    div.img-box-wrapper
+    {width: 100%;
+        height: 100%;
+    }
+    div.client-box
+    {     
         width: 100%;
     }
-    section.testimonial-container
+    div.client-box img
     {
-        display: block;
-        margin-top: 5%;
+        padding: 0 10px;
+        width: 100%;
     }
+        /*! Testimonial Section */
+    section.testimonial-container
+    {    display: block;}    
     div.cloud-y ,.cloud-b ,.cloud-r
-    { margin-top: 10%; }
+    { 
+        margin-top: 10%; 
+        width: 100%;
+    }
 
             /*! --------*/
-    section.content-container
+    section.content-container .form-box .form-group
     {
         display: block;
-        margin: 1%;
+        width: 90%;
     }
-    .form-box textarea
+        /*! Footer */
+    footer 
     {
-        width: inherit;
+        padding: 10px 0;        
+        margin: 0 auto;
     }
-    
-
+    footer div.title-foot button.btn-content
+    {    margin-top: 10px;}
+    div.title-foot .box
+    {    margin: 20px auto;}
+    div.foot-content p
+    {   padding: 10px 0;}
+    footer div.title-foot,
+    div.foot-content
+    {
+        display: block;
+        text-align: center;
+    }
 
     
 }
